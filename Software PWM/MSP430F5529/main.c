@@ -1,4 +1,4 @@
-/*  MSP430FR5529
+/*  MSP430F5529
     Author: Jacob Okun
     Created: October 3, 2018
     Last Updated: October 3, 2018*/
