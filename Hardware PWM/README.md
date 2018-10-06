@@ -1,18 +1,5 @@
 # Hardware PWM
-Now that you have done the software version of PWM, now it is time to start leveraging the other features of these Timer Modules.
+For this part of Lab 3 the code will increment the pulse width of the LED ini the same way it is done in the software section.  Initially it is 50% brightness, then incremented in steps of 10% until it reaches 100% where it is reset back to 0%.  This time hardware PWM was used.  Hardware is used by setting the timers in reset, set or toggle mode.  Both boards will have the LED brigtness increased with a seperate LED to show it has been done when the button is pressed.  
 
-## Task
-You need to replicate the same behavior as in the software PWM, only using the Timer Modules ability to directly output to a GPIO Pin instead of managing them in software. One way to thing about what should happen is that unless your are doing some other things in your code, your system should initialize, set the Timer Modules, and then turn off the CPU.
-
-## Deliverables
-You will need to have two folders in this repository, one for each of the processors that you used for this part of the lab. Remember to replace this README with your own.
-
-### Hints
-Read up on the P1SEL registers as well as look at the Timer modules ability to multiplex.
-
-## Extra Work
-### Using ACLK
-Some of these microprocessors have a built in ACLK which is extremely slow compared to your up to 25MHz available on some of them. What is the overall impact on the system when using this clock? Can you actually use your PWM code with a clock that slow?
-
-### Ultra Low Power
-Using a combination of ACLK, Low Power Modes, and any other means you may deem necessary, optimize this PWM code to run at 50% duty cycle with a LED on the MSP430FR5994. In particular, time how long your code can run on the fully charged super capacitor. You do not need to worry about the button control in this case, and you will probably want to disable all the GPIO that you are not using (nudge, nudge, hint, hint).
+## Implementation on both boards
+The implementation on both boards is the same besides the port and pin numbers.  There is a difference between the timers.  The FR2311 does not use timer A because it does not have it like the G2.  Instead timer b is used for the FR2311.  The timers function basically the same so syntax is very similar.
